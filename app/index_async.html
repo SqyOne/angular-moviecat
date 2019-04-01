@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步加载库</title>
+	 load.js script.js head.js 都可以帮助我们异步加载js文件
+	<!--<script src="../node_modules/load.js"></script>-->
+	<script src="./bower_components/script.js-2.5.8/dist/script.js"></script>
+	<script src="./bower_components/angular-loader/angular-loader.js"></script>
+	<!-- 引入angular-loader会帮我们自动解决脚本依赖问题 -->
+</head>
+<body>
+<script>
+	// angular.bootstrap(document, ['myApp']) 手动加载一个模块，bootstrap n.引导程序
+	// angular-loader的作用就是在使用一些异步加载脚本的库的时候，自动控制依赖顺序
+
+	//
+	// $script('you want to load', function () {
+	//
+	// })
+
+
+	/*// console.log($ + 's');
+	$script('./bower_components/jquery/dist/jquery.js', function () {
+		// 加载完jquery文件后才执行，需要一定的时间
+		console.log($ + 'q');
+	})
+	// console.log($ + 'y');*/
+
+	/*$script([
+		'./bower_components/angular/angular.js',
+		'./bower_components/jquery/dist/jquery.js'
+	], function () {
+		console.log(angular)
+		console.log(jQuery)
+	})*/
+
+	$script([
+		'./bower_components/angular/angular.js',
+		'./app.js'	// 由于这个包比较小，下载完过后就直接执行，前面依赖的包可能还没下载下来，就会报错
+	], function () {
+		console.log(angular)
+		angular.bootstrap(document, ['moviecat'])
+	})
+
+	/*$script('./bower_components/angular/angular.js', function () {
+            $script('./bower_components/angular-route/angular-route.js', function () {
+                $script('./app.js', function () {
+                    // 常见的方式（并行请求）
+                })
+            })
+        })*/
+
+</script>
+</body>
+</html>

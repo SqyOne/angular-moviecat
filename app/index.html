@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="moviecat">
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>电影</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap1.css">
+	<link rel="stylesheet" href="app1.css">
+	<meta name="referrer" content="no-referrer"/>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigaion</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">豆瓣电影</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">-->
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Dashboard</a></li>
+			</ul>
+			<form class="navbar-form navbar-right" ng-controller="SearchController" ng-submit="search()">
+				<input type="text" class="form-control" placeholder="Search..." ng-model="input">
+			</form>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3 col-md-2 sidebar">
+			<ul class="nav nav-sidebar">
+				<li auto-focus><a href="#/in_theaters/1">正在热映</a></li>
+				<li auto-focus><a href="#/coming_soon/1">即将上映</a></li>
+				<li auto-focus><a href="#/top250/1">TOP</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
+
+		</div>
+	</div>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<!-- 主模块 -->
+<script src="app.js"></script>
+<script src="components/http.js"></script>
+<script src="components/auto_focus.js"></script>
+<script src="movie_list/controller.js"></script>
+<!--https://api.douban.com/v2/movie/coming_soon?start=0&count=10&callback=my_json_cb_08819657950713143-->
+<!--https://api.douban.com/v2/movie/in_theathers?start=0&count=10&callback=my_json_cb_022210568085220184-->
+</body>
+</html>
