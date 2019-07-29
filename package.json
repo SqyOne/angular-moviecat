@@ -1,25 +1,34 @@
 {
-  "name": "angular-boilerplate",
+  "name": "angular-moviecat",
   "version": "1.0.0",
-  "description": "iceStone angular boilerplate",
+  "description": "angular-moviecat-master",
+  "main": "index.js",
+  "dependencies": {
+    "_emitify@3.1.0@emitify": "^3.1.0",
+    "_currify@3.0.0@currify": "^3.0.0",
+    "_angular@1.7.8@angular": "^1.7.8",
+    "angular": "^1.7.8",
+    "_fullstore@1.1.0@fullstore": "^1.1.0",
+    "angular-route": "^1.7.8",
+    "_angular-route@1.7.8@angular-route": "^1.7.8",
+    "_load.js@2.0.1@load.js": "^2.0.1",
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "postinstall": "bower install",
-    "prestart": "npm install",
-    "start": "./node_modules/.bin/hs -a localhost -p 9000 -o"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SqyOne/angular-moviecat.git"
   },
   "keywords": [
-    "iceStone",
-    "Micua",
-    "Angular",
-    "Boilerplate"
+    "angular"
   ],
-  "author": "iceStone <ice@wedn.net> (http://wedn.net/)",
+  "author": "SunQY",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "load.js": "^2.0.1"
+  "bugs": {
+    "url": "https://github.com/SqyOne/angular-moviecat/issues"
   },
-  "devDependencies": {
-    "http-server": "^0.9.0"
-  }
+  "homepage": "https://github.com/SqyOne/angular-moviecat#readme"
 }
